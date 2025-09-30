@@ -1,0 +1,26 @@
+﻿@model List<BTVN_03.Models.Loai>
+
+@{
+    ViewBag.Title = "Danh sách loại sản phẩm";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">@ViewBag.Title</h2>
+    <table class="table table-bordered table-striped table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th>Mã loại</th>
+                <th>Tên loại</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loai in Model)
+            {
+                <tr>
+                    <td class="text-center">@loai.MaLoai</td>
+                    <td>@loai.TenLoai</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

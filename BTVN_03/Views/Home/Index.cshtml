@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Header -->
+<header class="masthead">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                    <h1 class="display-1 lh-1 mb-3">Cửa hàng điện thoại Online</h1>
+                    <p class="lead fw-normal text-muted mb-5">
+                        Mua sắm điện thoại chính hãng, giá tốt. Giao hàng tận nơi, hỗ trợ 24/7.
+                    </p>
+                    <a class="btn btn-primary rounded-pill px-4 py-2" href="@Url.Action("HienThiSanPham","Home")">
+                        <i class="bi-phone me-2"></i> Xem sản phẩm
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="device-wrapper mx-auto" style="max-width: 300px;">
+                    <img src="~/assets/img/portrait_black.png" class="img-fluid position-relative" alt="iPhone Frame" />
+                    <video autoplay loop muted playsinline
+                           class="device-video position-absolute top-0 start-0 w-100 h-100">
+                        <source src="~/assets/img/demo-screen.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Giới thiệu -->
+<section class="bg-light py-5">
+    <div class="container px-5 text-center">
+        <h2 class="display-5 mb-4">Tại sao chọn chúng tôi?</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <i class="bi-check-circle-fill text-success display-4 mb-3"></i>
+                <h5>Sản phẩm chính hãng</h5>
+            </div>
+            <div class="col-md-4">
+                <i class="bi-truck text-primary display-4 mb-3"></i>
+                <h5>Giao hàng nhanh chóng</h5>
+            </div>
+            <div class="col-md-4">
+                <i class="bi-shield-lock text-danger display-4 mb-3"></i>
+                <h5>Bảo mật & bảo hành</h5>
+            </div>
+        </div>
+    </div>
+</section>

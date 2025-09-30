@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Buoi05.Models.Deparment>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Danh sách phòng ban";
+}
+<h2>Danh sách phòng ban</h2>
+<p>
+    @Html.ActionLink("Thêm Phòng ban mới", "Create")
+</p>
+<table class="table table-striped border">
+    <thead class="thead-dark">
+        <tr style="background-color:rebeccapurple;">
+            <th>
+                Mã nhân viên
+            </th>
+            <th>
+                Tên phòng
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Maph
+            </td>
+            <td>
+                @item.TenPh
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit_PhongBan", new { id = item.Maph })
+                @Html.ActionLink("Detail", "Detail_PhongBan", new { id = item.Maph})
+                @Html.ActionLink("Delete", "Delete_PhongBan", new { id = item.Maph })
+
+            </td>
+        </tr>
+    }
+
+</table>

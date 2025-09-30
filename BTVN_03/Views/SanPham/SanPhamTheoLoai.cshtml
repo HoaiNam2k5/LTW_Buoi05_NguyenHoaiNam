@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BTVN_03.Models.SanPham>
+
+<h2>Danh sách sản phẩm</h2>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Mã SP</th>
+        <th>Tên SP</th>
+        <th>Hình ảnh</th>
+        <th>Giá</th>
+        <th>Mô tả</th>
+    </tr>
+    @foreach (var sp in Model)
+    {
+        <tr>
+            <td>@sp.MaSP</td>
+            <td>@sp.TenSP</td>
+         
+            <td>@sp.Gia</td>
+            <td>@sp.MoTa</td>
+        </tr>
+    }
+</table>

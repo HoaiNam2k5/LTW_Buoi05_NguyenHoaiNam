@@ -1,0 +1,36 @@
+﻿@model List<BTVN_03.Models.SanPham>
+
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">@ViewBag.Title</h2>
+    <table class="table table-bordered table-striped table-hover align-middle shadow-sm">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th>Mã SP</th>
+                <th>Tên SP</th>
+                <th>Ảnh</th>
+                <th>Giá</th>
+                <th>Mô tả</th>
+                <th>Mã loại</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sp in Model)
+            {
+                <tr>
+                    <td class="text-center">@sp.MaSP</td>
+                    <td>@sp.TenSP</td>
+                    <td class="text-center">
+                        <img src="@sp.DuongDan" alt="@sp.TenSP" class="img-thumbnail" style="width:80px; height:auto;" />
+                    </td>
+                    <td class="text-end text-danger fw-bold">@sp.Gia.ToString("N0") đ</td>
+                    <td>@sp.MoTa</td>
+                    <td class="text-center">@sp.MaLoai</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
