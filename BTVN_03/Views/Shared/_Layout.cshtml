@@ -29,9 +29,9 @@
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                     <li class="nav-item"><a class="nav-link" href="@Url.Action("HienThiLoai","Home")">Loại sản phẩm</a></li>
                     <li class="nav-item"><a class="nav-link" href="@Url.Action("HienThiSanPham","Home")">Sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="@Url.Action("MenuLoai","SanPham")">Menu theo Loại </a></li>
-                    <li class="nav-item"><a class="nav-link" href="@Url.Action("SanPhamTheoLoai","SanPham")">Sản phẩm theo loại</a></li>
-                    <li class="nav-item"><a class="nav-link" href="@Url.Action("TimKiem","SanPham")">Tìm Kiếm sản phẩm</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("SanPhamTheoLoai","Home")">Sản phẩm theo loại</a></li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("TimKiem","Home")">Tìm Kiếm sản phẩm</a></li>
 
 
                     <li class="nav-item"><a class="nav-link" href="#download">Tải app</a></li>
@@ -46,8 +46,16 @@
         </div>
     </nav>
 
-    <!-- Nội dung riêng của từng trang -->
-    @RenderBody()
+    <div class="row">
+        <div class="col-md-3">
+            <h4>Danh mục sản phẩm</h4>
+            @Html.Action("MenuSanPham", "Home")
+        </div>
+
+    </div>
+
+
+        @RenderBody()
 
     <!-- Footer -->
     <footer class="bg-black text-center py-5">

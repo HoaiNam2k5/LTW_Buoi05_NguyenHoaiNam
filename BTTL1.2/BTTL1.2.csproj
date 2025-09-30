@@ -153,7 +153,6 @@
     <Content Include="assets\img\team\1.jpg" />
     <Content Include="assets\img\team\2.jpg" />
     <Content Include="assets\img\team\3.jpg" />
-    <Content Include="Buoi05.sln" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />

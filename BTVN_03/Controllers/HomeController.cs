@@ -26,11 +26,30 @@ namespace BTVN_03.Controllers
             List<SanPham> ds = db.dsSanPham;
             return View(ds);
         }
-        public ActionResult SanPhamTheoLoai(int id)
+        public ActionResult SanPhamTheoLoai(int? id)
+        {
+            if (id == null)
+            {
+         
+                return RedirectToAction("HienThiSanPham");
+            }
+            DuLieu db = new DuLieu();
+            var ds = db.GetSanPhamByLoai(id.Value);
+            return View(ds);
+        }
+        public ActionResult TimKiem(string keyword)
         {
             DuLieu db = new DuLieu();
-            List<SanPham> ds = db.GetSanPhamByLoai(id);
+            var ds = db.SearchSanPham(keyword ?? "");
+            ViewBag.Keyword = keyword;
+            ViewBag.Count = ds.Count;
             return View(ds);
+        }
+        public PartialViewResult MenuSanPham()
+        {
+            DuLieu db = new DuLieu();
+            var dsLoai = db.GetLoaiSP();
+            return PartialView("_MenuSanPham", dsLoai);
         }
 
     }

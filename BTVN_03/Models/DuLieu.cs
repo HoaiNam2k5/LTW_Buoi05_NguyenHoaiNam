@@ -75,29 +75,31 @@ namespace BTVN_03.Models
         public List<SanPham> GetSanPhamByLoai(int maloai)
         {
             var list = new List<SanPham>();
-            using (SqlConnection con = new SqlConnection(strcon))
+            using (SqlConnection cnn = new SqlConnection(strcon))
             {
-                con.Open();
-                string sql = "SELECT MaSP, TenSP, DuongDan, Gia, MoTa, MaLoai FROM SanPham WHERE MaLoai=@maloai";
-                SqlCommand cmd = new SqlCommand(sql, con);
+                cnn.Open();
+                string sql = "SELECT MaSP, TenSP, DuongDan, Gia, MoTa, MaLoai FROM SanPham WHERE MaLoai = @maloai";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.AddWithValue("@maloai", maloai);
-                SqlDataReader rd = cmd.ExecuteReader();
-                while (rd.Read())
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    var sp = new SanPham
+                    while (rd.Read())
                     {
-                        MaSP = rd.GetInt32(rd.GetOrdinal("MaSP")),
-                        TenSP = rd["TenSP"].ToString(),
-                        DuongDan = rd["DuongDan"].ToString(),
-                        Gia = rd.IsDBNull(rd.GetOrdinal("Gia")) ? 0 : Convert.ToDecimal(rd["Gia"]),
-                        MoTa = rd["MoTa"].ToString(),
-                        MaLoai = rd.GetInt32(rd.GetOrdinal("MaLoai"))
-                    };
-                    list.Add(sp);
+                        var sp = new SanPham();
+                        sp.MaSP = rd.GetInt32(rd.GetOrdinal("MaSP"));
+                        sp.TenSP = rd["TenSP"].ToString();
+                        sp.DuongDan = rd["DuongDan"].ToString();
+                        sp.Gia = rd.IsDBNull(rd.GetOrdinal("Gia")) ? 0 : Convert.ToDecimal(rd["Gia"]);
+                        sp.MoTa = rd["MoTa"].ToString();
+                        sp.MaLoai = rd.GetInt32(rd.GetOrdinal("MaLoai"));
+                        list.Add(sp);
+                    }
                 }
             }
             return list;
         }
+
 
 
         // Tìm kiếm sản phẩm gần đúng

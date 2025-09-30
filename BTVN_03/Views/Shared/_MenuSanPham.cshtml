@@ -1,0 +1,12 @@
+﻿@model List<BTVN_03.Models.Loai>
+
+<ul class="nav flex-column">
+    @foreach (var loai in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("SanPhamTheoLoai", "Home", new { id = loai.MaLoai })">
+                @loai.TenLoai
+            </a>
+        </li>
+    }
+</ul>

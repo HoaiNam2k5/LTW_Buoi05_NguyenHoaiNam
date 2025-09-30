@@ -121,7 +121,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,10 +188,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\HienThiLoai.cshtml" />
     <Content Include="Views\Home\HienThiSanPham.cshtml" />
-    <Content Include="Views\SanPham\MenuLoai.cshtml" />
-    <Content Include="Views\SanPham\SanPhamTheoLoai.cshtml" />
-    <Content Include="Views\SanPham\TimKiem.cshtml" />
     <Content Include="Views\Home\SanPhamTheoLoai.cshtml" />
+    <Content Include="Views\Home\TimKiem.cshtml" />
+    <Content Include="Views\Shared\_MenuSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
